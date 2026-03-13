@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картки товарів — Swiper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-body h3 {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .card-body p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .card-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e44d26;
+        }
+
+        .card-btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 20px;
+            background: #6366f1;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .card-btn:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Популярні товари</h1>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img class="card-image" src="Gemini_Generated_Image_9tww9g9tww9g9tww.png" alt="Смарт-годинник">
+                <div class="card-body">
+                    <h3>Смарт-годинник Sport Pro</h3>
+                    <p>Стильний годинник з моніторингом здоров'я та GPS-трекером.</p>
+                    <span class="card-price">8 999 ₴</span><br>
+                    <button class="card-btn">Додати в кошик</button>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img class="card-image" src="Gemini_Generated_Image_p1fnyop1fnyop1fn.png" alt="Бездротові навушники">
+                <div class="card-body">
+                    <h3>Навушники AirSound</h3>
+                    <p>Навушники з активним шумозаглушенням.</p>
+                    <span class="card-price">3 490 ₴</span><br>
+                    <button class="card-btn">Додати в кошик</button>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img class="card-image" src="Gemini_Generated_Image_tzk3kdtzk3kdtzk3.png" alt="Смартфон">
+                <div class="card-body">
+                    <h3>Смартфон Phantom X</h3>
+                    <p>Флагманський смартфон із потрійною камерою та AMOLED.</p>
+                    <span class="card-price">18 999 ₴</span><br>
+                    <button class="card-btn">Додати в кошик</button>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img class="card-image" src="Gemini_Generated_Image_52sdh652sdh652sd.png" alt="Ноутбук">
+                <div class="card-body">
+                    <h3>Ноутбук Studio Pro</h3>
+                    <p>Потужний ноутбук для професійної роботи та розваг.</p>
+                    <span class="card-price">35 290 ₴</span><br>
+                    <button class="card-btn">Додати в кошик</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Пагінація -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Стрілки навігації -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 1, // За замовчуванням показуємо 1 слайд на мобільних пристроях 
+        spaceBetween: 20, // Відстань між слайдами
+        loop: true, // Безкінечна прокрутка
+        pagination: { // Підключаємо пагінацію (крапки внизу)
+            el: '.swiper-pagination', 
+            clickable: true,
+        },
+        navigation: { // Підключаємо стрілки навігації
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }, 
+        breakpoints: { // Адаптивні налаштування
+            640: {
+                slidesPerView: 2, // На планшетах показуємо 2 слайди
+            },
+            900: {
+                slidesPerView: 3, // На десктопах показуємо 3 слайди
+            },
+        },
+    });
+</script>
+
+</body>
+</html>
